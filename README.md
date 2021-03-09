@@ -1,4 +1,4 @@
-# esx_giveid
+# esx_annaid
 
 Voit antaa henkkarisi toiselle pelaajalle /annaid
 
