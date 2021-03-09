@@ -1,4 +1,3 @@
-
 ESX = nil
 
 Citizen.CreateThread(function()
@@ -11,9 +10,9 @@ end)
 RegisterNetEvent('esx_giveid:GiveIdResponse')
 AddEventHandler('esx_giveid:GiveIdResponse', function(response)
 	if response then 
-		ESX.ShowNotification("You have given your ID to ~y~" .. response)
+		ESX.ShowNotification("Sinä annoit henkilökorttisi ~y~" .. response)
 	else
-		ESX.ShowNotification("~r~Error no ID found")
+		ESX.ShowNotification("~r~Henkilökorttia ei löytynyt")
 	end
 end)
 
@@ -22,7 +21,7 @@ AddEventHandler('esx_giveid:DisplayPlayerId', function(playerInfoString, playerI
 	if playerInfoString and playerId then 
 		showIdNotification(playerInfoString, playerId)
 	else
-		ESX.ShowNotification("~r~Error no ID found")
+		ESX.ShowNotification("~r~Henkilökorttia ei löytynyt")
 	end
 end)
 
@@ -65,7 +64,7 @@ function GetClosestPedNotInVehicle(coords)
 end
 
 Citizen.CreateThread(function()
-	TriggerEvent('chat:addSuggestion', '/giveid', "Gives your ID to the closest player." )
+	TriggerEvent('chat:addSuggestion', '/giveid', "Annat henkilökorttisi lähimmälle pelaajalle." )
 end)
 
 RegisterCommand("giveid", function(source,args)
@@ -84,7 +83,7 @@ RegisterCommand("giveid", function(source,args)
 			TriggerServerEvent("esx_giveid:GiveIdToPlayer", targetPlayerId)
 		end
 	else
-		ESX.ShowNotification("No player found nearby")
+		ESX.ShowNotification("Lähelläsi ei ole ketään, jolle antaa henkilökorttiasi!")
 	end
 end, false)
 
