@@ -67,7 +67,7 @@ Citizen.CreateThread(function()
 	TriggerEvent('chat:addSuggestion', '/giveid', "Annat henkilökorttisi lähimmälle pelaajalle." )
 end)
 
-RegisterCommand("giveid", function(source,args)
+RegisterCommand("annaid", function(source,args)
 	local playerCoords = GetEntityCoords(GetPlayerPed(-1))
 	local closestPed, closestDistance = GetClosestPedNotInVehicle(playerCoords)
 	local targetCoords = GetEntityCoords(closestPed)
@@ -97,6 +97,6 @@ end
 
 AddEventHandler('onResourceStop', function(resource)
 	if resource == GetCurrentResourceName() then
-		TriggerEvent('chat:removeSuggestion', '/giveid')
+		TriggerEvent('chat:removeSuggestion', '/annaid')
 	end
 end)
